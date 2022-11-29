@@ -20,6 +20,7 @@ import com.nttdata.nttdatacenters.hibernate.services.CustomerManagementServiceIm
  *
  */
 public class Main {
+	
 	/** LOGGER **/
 	private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
@@ -31,6 +32,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		LOG.info("TRAZA DE INICIO");
+		
 		// Apertura de sesión.
 		final Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -144,14 +146,14 @@ public class Main {
 
 		LOG.info("Fin inserciones de clientes");
 
-		LOG.info("Inicio de consultas y modificaciones de los clientes");
+		LOG.info("Inicio de consultas y modificaciones de los clientes y contratos");
 
 		// Consulta de todos los clientes.
 		List<Customer> customersList = customerService.searchAll();
 		System.out.println("Lista de todos los clientes: ");
 		for (final Customer customers : customersList) {
 
-			System.out.println(customers.getId() + " " + customers.getDni() + " " + customers.getName() + " "
+			System.out.println(customers.getCustomerId()+ " " + customers.getDni() + " " + customers.getName() + " "
 					+ customers.getFirstSurname() + " " + customers.getSecondSurname() + " "
 					+ customers.getCustomerId());
 			System.out.println("\n");
@@ -182,10 +184,11 @@ public class Main {
 		System.out.println("Consulta de contrato por ID de cliente:");
 		System.out.println(seacrhIdCustomer);
 		
-		LOG.info("Fin de consultas y modificaciones de los clientes");
+		LOG.info("Fin de consultas y modificaciones de los clientes y contratos");
 
 		// Cierre de sesión.
 		session.close();
+		
 		LOG.info("TRAZA DE FIN");
 	}
 }

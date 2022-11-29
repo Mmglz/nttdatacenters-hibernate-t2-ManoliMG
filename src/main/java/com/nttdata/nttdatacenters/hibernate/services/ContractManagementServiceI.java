@@ -51,7 +51,7 @@ public interface ContractManagementServiceI {
 	 * Obtiene un contrato por el ID del cliente.
 	 * 
 	 * @param customer
-	 * @return Contract
+	 * @return List<Contract>
 	 */
 	public List<Contract> searchByCustomerId(Long customer);
 }

@@ -16,7 +16,7 @@ public interface CustomerDaoI extends CommonDaoI<Customer>{
 	 * @param name
 	 * @param firstSurname
 	 * @param secondSurname
-	 * @return Customer
+	 * @return List<Customer>
 	 */
 	public List <Customer> searchByNameAndSurnames(final String name, final String firstSurname, final String secondSurname);
 

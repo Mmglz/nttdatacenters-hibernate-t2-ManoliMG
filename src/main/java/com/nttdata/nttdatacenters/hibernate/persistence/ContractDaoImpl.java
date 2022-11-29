@@ -4,6 +4,12 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+/**
+ * Implementación del DAO de Contract
+ * 
+ * @author manoli
+ *
+ */
 public class ContractDaoImpl extends CommonDaoImpl<Contract> implements ContractDaoI {
 
 	/** Sesión de conexión a la BBDD. */

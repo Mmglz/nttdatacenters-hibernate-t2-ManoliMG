@@ -53,7 +53,7 @@ public interface CustomerManagementServiceI {
 	 * @param name
 	 * @param firstSurname
 	 * @param secondSurname
-	 * @return Customer
+	 * @return List <Customer>
 	 */
 	public List<Customer> searchByNameAndSurnames(String name, String firstSurname, String secondSurname);
 
